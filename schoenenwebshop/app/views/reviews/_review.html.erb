@@ -1,0 +1,9 @@
+<div>
+  <blockquote>
+    <p>"<%= review.message %>"</p>
+    <footer>
+        <%= review.user.email %>
+        <em><%= link_to "See other reviews by this user", user_reviews_path( review.user ) %>
+      </em></footer>
+  </blockquote>
+</div>

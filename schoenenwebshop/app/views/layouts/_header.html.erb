@@ -1,0 +1,66 @@
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-togle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>">Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="<%= root_path %>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Men <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% @manscategories = Category.joins(:shoes).where(shoes:{gender:["man","unisex"]}).uniq%>
+            <% @manscategories.each do |category| %>
+              <li><%= link_to category.name, men_category_shoes_path(category) %></li>
+            <%end%>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="<%= root_path %>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Women <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% @womanscategories = Category.joins(:shoes).where(shoes:{gender:["woman","unisex"]}).uniq%>
+            <% @womanscategories.each do |category| %>
+              <li><%= link_to category.name, women_category_shoes_path(category) %></li>
+              <%end%>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="<%= root_path %>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kids <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% @kidscategories = Category.joins(:shoes).where(shoes:{gender:"kids"}).uniq%>
+            <% @kidscategories.each do |category| %>
+              <li><%= link_to category.name, kids_category_shoes_path(category) %></li>
+            <%end%>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if !user_signed_in? %>
+          <li><%= link_to "Log In", new_user_session_path, class: "btn" %></li>
+        <% else %>
+          <li><span class="navbar-text"><%= current_user.email %></span></li>
+          <li><%= link_to "Log Out", destroy_user_session_path, class: "btn", :method => :delete %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="search-btn">
+  <%= form_tag '/shoes', :method => 'get', id: "search-form", class: "navbar-form", role:"search" do %>
+    <div class="form-group">
+      <p class="search">
+        <%= text_field_tag :search, params[:search], placeholder: "Search name", class: "form-control" %>
+        <%= submit_tag "Search", :name => nil, class: "btn" %>
+      </p>
+    </div>
+    <div class="cart-trolley">
+      <a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+    </div>
+  <% end %>
+</div>

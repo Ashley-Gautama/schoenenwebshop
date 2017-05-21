@@ -1,0 +1,20 @@
+
+
+<div class="text-center"><h3>Here is what our Customers say about <strong><%= @shoe.name %></strong> </h3>
+<%= image_tag( @shoe.image, width:"100", height:"auto" ) %></div>
+
+
+<br>
+
+<%= render @reviews %>
+
+<br>
+<em>Tried this Product? Tell us about it!</em>
+<% if current_user then %>
+  <%= render "form" %>
+<% else%>
+  <br>
+    <p class="text-danger"><strong>You must log in before you can write a review</strong></p>
+<%end%>
+<br>
+<p><%= link_to "Back to Show Page", @shoe %></p>

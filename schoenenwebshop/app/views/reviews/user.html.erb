@@ -1,0 +1,15 @@
+<h1><%= "Reviews by " + @user.email %></h1>
+
+<br>
+
+<% @reviews.each do |review| %>
+<div>
+  <blockquote>
+    <p>"<%= review.message %>"</p>
+    <footer><p>Review for
+      <%= link_to review.shoe.name, review.shoe %>
+    <%= image_tag( review.shoe.image, width:"100", height:"auto" ) %></p>
+    </footer>
+  </blockquote>
+</div>
+<% end %>

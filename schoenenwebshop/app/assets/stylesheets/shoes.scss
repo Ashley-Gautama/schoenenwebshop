@@ -1,0 +1,43 @@
+
+.img-index {
+  display: flex;
+  align-items: center;
+  max-height: 186px;
+}
+
+.thumbnail > img, .thumbnail a > img {
+  max-width: none;
+}
+
+.shoe-thumb {
+  min-height: 550px;
+}
+
+.wrapper {
+  // background-image: url(./top_image1.jpg);
+  background-color: rgba(207, 200, 180, 0.7);
+  // background-repeat: no-repeat;
+  // background-size: 100%;
+  // background-position: center;
+  // width: auto;
+  height: 300px;
+}
+
+.sale-txt {
+  font-family: 'EB Garamond', serif;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 140px;
+  color: #930000;
+}
+
+.sub-sale-txt {
+  padding-right: 300px;
+  text-align: right;
+  font-size: 20px;
+  color: #930000;
+}
+
+p {
+  text-align: justify;
+}

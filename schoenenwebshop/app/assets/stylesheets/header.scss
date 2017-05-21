@@ -1,0 +1,79 @@
+.cart-trolley {
+  font-size: 24px;
+  float: left;
+  padding-right: 25px;
+  padding-top: 4px;
+  color: #444;
+}
+
+.cart-trolley a {
+  color: #444;
+}
+
+.cart-trolley a:hover {
+  color: #666;
+}
+
+.form-control {
+  border-radius: 0;
+  letter-spacing: 2px;
+}
+
+.nav {
+  padding-left: 25px;
+  padding-right: 25px;
+  letter-spacing: 3px;
+}
+
+.navbar {
+  border-radius: 0px;
+}
+
+.navbar-right {
+  margin-right: -20px;
+}
+
+.navbar-brand {
+  font-size: 20px;
+  letter-spacing: 3px;
+  padding-left: 50px;
+  margin-right: 50px;
+}
+
+.dropdown {
+  width: 160px;
+  border-right: 2px solid #666;
+  margin-right: 20px;
+}
+
+.dropdown-toggle:hover {
+  border-radius: 0px;
+  background-image: none !important;
+  background-color: #666 !important;
+}
+
+.dropdown-menu a:hover {
+  background-color: #555 !important;
+}
+
+.caret {
+  float: right;
+  margin-top: 7.5px;
+}
+
+.btn:hover {
+  border-radius: 0px;
+  background-image: none !important;
+  background-color: #666 !important;
+}
+
+.search-btn {
+  float: right;
+  margin-top: -20px;
+  margin-right: 25px;
+}
+
+.btn {
+  letter-spacing: 2px;
+  border-radius: 0;
+}
